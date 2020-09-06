@@ -2,91 +2,75 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <!--- este es un comentario --->
-    <title>Trabajo Final Analítica predictiva</title>
+    <title>Covid19</title>
+
+    <!--- se adiciona el estilo usando CSS --->
+    <style>
+
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            font-size: 20px;
+        }
+
+        nav {
+          float: left;
+          width: 20%;
+          height: 150px;
+          background: #eeeeee;
+          padding: 20px;
+        }
+
+    </style>
+    <!-- fin de la definición de estilo --->
+
   </head>
   <body>
-    <div>
-        <h1>Pronóstico de casos activos, nuevos, fallecidos y recuperados de covid19 en Colombia</h1>
-        <p>                                Elaborado por:
-          <p>                           Sara Yelen Valencia Velez<p> 
-            <p>                         Elizabeth Gutiérrez Bustamante<p> 
-              <p>                        Edward Alexander Perez<p> 
-        </p>
-    </div>
-  </body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Estructura semantica</title>
-  </head>
-  <body>
-    <header>
-        
+
+    <header  style="border:1px solid black; border-width:2px;">
+      <h2>Casos por Ciudad</h2>
     </header>
-    <section>
-        <h2>Definición del problema real</h1>
 
-        <p>El mundo vive una crisis sanitaria, humana y económica sin precedentes en el último siglo y que 
-          evoluciona continuamente. Ante la pandemia originada de la enfermedad por coronavirus (COVID-19), 
-          las economías se han paralizado y colapsado, las sociedades entran en cuarentenas más o menos severas, 
-          medidas solo comparables a las de situaciones de guerra. Los gobiernos se encuentran en unas disyuntiva 
-          debido a que deben responder de forma inmediata activando la mejor estrategia que impida alta propagación 
-          del virus, pero a su vez proteger los más vulnerables y crear resiliencia ante la crisis, evitando que la 
-          denominada brecha económica y social que se evidencia en los países más vulnerables  no aumente </p>
+    <nav style="border:1px solid red; border-width:2px;">
+      <p>Ciudad:</p>
+      <select id="Ciudad" name="Ciudad"  onchange="selectPlot()">
+        <option value="Bogota">Bogota</option>
+        <option value="Barranquilla">Barranquilla</option>
+        <option value="Cali">Cali</option>
+        <option value="Cartagena">Cartagena</option>
+        <option value="Medellin">Medellin</option>
+        <option value="Africa">Africa</option>
+        <option value="Mid.Amer">Mid.Amer</option>
+      </select>
+      <br>
+      <hr>
+      <p> Data from AT&T (1961) The World's Telephones. </p>
+    </nav>
 
-        <p>Los gobiernos deben adoptar medidas que permitan sostener y después estimular la economía por 
-          medio de la oferta y demanda, estas actividades implican tanto recursos públicos como políticas 
-          que se ajusten  a las capacidades y recursos productivos de cada país y/o  región. Las acciones para
-           combatir esta enfermedad radican principalmente en el denominado aislamiento social, a pesar de 
-           que esta medida tiene impactos positivos para la salud debido a que  permite aplanar la curva de 
-           contagios y disminuir la propagación de la enfermedad, a su vez afecta el desarrollo económico 
-           debido a que el distanciamiento trae consigo desaceleración de la producción y en algunos casos 
-           su interrupción total. </p>
-           
-        <p>“El crecimiento de la economía mundial se había reducido en los últimos  8 años (2011-2019) con 2,8% 
-          frente al 3,4% que se dio entre el periodo 1997-2006. En 2019, la economía mundial registró su peor 
-          desempeño desde 2009, con una tasa de crecimiento de sólo un 2,5%. Antes de la pandemia, las previsiones 
-          de crecimiento del PIB mundial para 2020 se habían revisado a la baja. Se esperaba que disminuyera al menos
-          1% sin embargo a medida que ésta ha aumentado se ha previsto caídas en los PIB  de 3,8% en los Estados Unidos, 
-          el 9% en la zona del euro y el 2,1% en el Japón, y una desaceleración en China que la llevaría a un crecimiento 
-          de solo un 3%” </p>
+    <div style="border:1px solid blue; border-width:2px;">
+      <div class="myImage" id="Bogota"   style="display:block"> <img src="figs/Bogota.png"   alt="Bogota">   </div>
+      <div class="myImage" id="Barranquilla"   style="display:none">  <img src="figs/Barranquilla.png"   alt="Barranquilla">   </div>
+      <div class="myImage" id="Cali"     style="display:none">  <img src="figs/Cali.png"     alt="Cali">     </div>
+      <div class="myImage" id="Cartagena"   style="display:none">  <img src="figs/Cartagena.png"   alt="Cartagena">   </div>
+      <div class="myImage" id="Medellin"  style="display:none">  <img src="figs/Medellin.png"  alt="Medellin">  </div>
+      <div class="myImage" id="Africa"   style="display:none">  <img src="figs/Africa.png"   alt="Africa">   </div>
+      <div class="myImage" id="Mid.Amer" style="display:none">  <img src="figs/Mid.Amer.png" alt="Mid.Amer"> </div>
+    </div>
 
-        <p>“Las estimaciones de la Organización Internacional del Trabajo (OIT, 2020) indican un aumento del desempleo mundial
-           de entre 5,3 millones de personas y 24,7 millones de personas, con una base de 188 millones de personas desocupadas 
-           en 2019. En un escenario “medio” el aumento del desempleo sería de 13 millones de personas” <p>
-
-    </section>
-
-    <section>
-        <h2>Definición del problema de analítica</h2>
-
-        <p>En Colombia el Instituto Nacional de Salud (INS) notifica diariamente al Ministerio
-           de Salud y Protección Social las cifras de casos confirmados acumulados de 
-           COVID-19: total casos, en hospitalizaciones, ingresos en UCI, fallecidos y recuperados.
-           Los modelos predictivos son útiles para estimar el número de casos y de muertes por la COVID-19; 
-          los recursos necesarios, como las camas de hospital y de UCI; y la demanda de suministros, como la 
-          de equipos de protección personal (EPP). </p>
-
-      </p>Presentar mediante modelos estadísticos la estimación del comportamiento futuro de la enfermedad, 
-      basados en los datos recopilados en los meses anteriores y que permita tomar decisiones estratégicas 
-      y propiciar expectativas. </p>
-        
-    </section>
-      <h2>Código</h2>
-
-            <nav>
-            <a href=https://colab.research.google.com/drive/1OTriMr1Bn6xvIvrw1Yz4lS9wz9LogEvP#scrollTo=ECV5ZYUqiDL9>Código</a>
-        </nav>
-
-
-        
-    <footer>
-        Pie de página
-    </footer>
-
-
+    <script>
+      function selectPlot() {
+        var Ciudad = document.getElementById("Ciudad").value;
+        var images = document.getElementsByClassName("myImage");
+        for (var i = 0; i < images.length; i++) {
+          if (images[i].id == Ciudad) {
+            images[i].style.display = "block"
+          }else{
+            images[i].style.display = "none"
+          }
+        }
+      }
+    </script>
   </body>
 </html>
