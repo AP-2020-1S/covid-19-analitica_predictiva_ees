@@ -34,17 +34,15 @@
     </header>
 
     <nav style="border:1px solid red; border-width:2px;">
-      <p>Ciudad:</p>
+      <p>Recuperados:</p>
       <select id="Ciudad" name="Ciudad"  onchange="selectPlot()">
         <option value="Bogota">Bogota</option>
         <option value="Barranquilla">Barranquilla</option>
         <option value="Cali">Cali</option>
         <option value="Cartagena">Cartagena</option>
         <option value="Medellin">Medellin</option>
-        <option value="Africa">Africa</option>
-        <option value="Mid.Amer">Mid.Amer</option>
       </select>
-      <br>
+      <br>  
       <hr>
       <p> Data from AT&T (1961) The World's Telephones. </p>
     </nav>
@@ -58,6 +56,27 @@
       <div class="myImage" id="Africa"   style="display:none">  <img src="figs/Africa.png"   alt="Africa">   </div>
       <div class="myImage" id="Mid.Amer" style="display:none">  <img src="figs/Mid.Amer.png" alt="Mid.Amer"> </div>
     </div>
+  </nav>
+  <nav style="border:1px solid red; border-width:2px;">
+    <p>Fallecidos:</p>
+    <select id="Ciudad" name="Ciudad"  onchange="selectPlot()">
+      <option value="Bogota">Bogota</option>
+      <option value="Barranquilla">Barranquilla</option>
+      <option value="Cali">Cali</option>
+      <option value="Cartagena">Cartagena</option>
+      <option value="Medellin">Medellin</option>
+    </select>
+    <br>
+  </nav> 
+  <div style="border:1px solid blue; border-width:2px;">
+    <div class="myImage" id="Bogota"   style="display:block"> <img src="figs/Bogota.png"   alt="Bogota">   </div>
+    <div class="myImage" id="Barranquilla"   style="display:none">  <img src="figs/Barranquilla.png"   alt="Barranquilla">   </div>
+    <div class="myImage" id="Cali"     style="display:none">  <img src="figs/Cali.png"     alt="Cali">     </div>
+    <div class="myImage" id="Cartagena"   style="display:none">  <img src="figs/Cartagena.png"   alt="Cartagena">   </div>
+    <div class="myImage" id="Medellin"  style="display:none">  <img src="figs/Medellin.png"  alt="Medellin">  </div>
+    <div class="myImage" id="Africa"   style="display:none">  <img src="figs/Africa.png"   alt="Africa">   </div>
+    <div class="myImage" id="Mid.Amer" style="display:none">  <img src="figs/Mid.Amer.png" alt="Mid.Amer"> </div>
+  </div>
 
     <script>
       function selectPlot() {
