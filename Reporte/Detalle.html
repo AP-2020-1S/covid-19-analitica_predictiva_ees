@@ -3,11 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>Modelo Predicción Covid19</title>
+  <style>
+      header {
+            font-size: 40px;
+            font-weight: bold
+        }
+
+  </style>
   </head>
   <body>
-    <header>
+    <header align="center">
         Predicción del comportamiento del Covid19 en Colombia
     </header>
+    <h4 align="center">
+      <p><em>Relizado por:</em></p>
+      <p><em>Sara Yelen Valencia Velez</em> correo: <a href="mailto:syvalenciav@unal.edu.co">syvalenciav@unal.edu.co</a></p>
+      <p><em>Elizabeth Gutiérrez Bustamante</em> correo: <a href="mailto:elgutierrezbu@unal.edu.co">elgutierrezbu@unal.edu.co</a></p>
+      <p><em>Edward Alexander Perez Betancur</em> correo: <a href="mailto:eaperezb@unal.edu.co">eaperezb@unal.edu.co</a></p>
+    </h4>
     <section>
     
         <h2>Índice</h2>
@@ -65,17 +78,18 @@
         <h2>Definición del problema de analítica</h2>
 
         <p> 
-        En Colombia el Instituto Nacional de Salud (INS) notifica diariamente al Ministerio de Salud 
-        y Protección Social las cifras de casos confirmados acumulados de COVID-19: total casos, en 
-        hospitalizaciones, ingresos en UCI, fallecidos y recuperados. </p>
+          En Colombia el Instituto Nacional de Salud (INS) notifica diariamente al Ministerio de Salud y 
+          Protección Social las cifras de casos confirmados acumulados de COVID-19: total casos, 
+          en hospitalizaciones, ingresos en UCI, fallecidos y recuperados, dando como resultado datos 
+          relevantes que se pueden recopilar y analizar.  </p>
+
         </p>
-        Los modelos predictivos son útiles para estimar el número de casos y de muertes por la COVID-19; 
-        los recursos necesarios, como las camas de hospital y de UCI; y la demanda de suministros, como 
-        la de equipos de protección personal (EPP).</p>
-        </p>
-        Presentar mediante modelos estadísticos la estimación del comportamiento futuro de la enfermedad, 
-        basados en los datos recopilados en los meses anteriores y que permita tomar decisiones estratégicas
-         y propiciar expectativas.</p>
+        Al entender que los modelos predictivos son útiles para estimar el número de casos y de muertes 
+        por la COVID-19; los recursos necesarios, como las camas de hospital y de UCI; y la demanda de 
+        suministros, como la de equipos de protección personal (EPP), se hace importante presentar 
+        mediante modelos estadísticos la estimación del comportamiento futuro de la enfermedad,
+        basados en los datos recopilados en los meses anteriores, que permita tomar decisiones estratégicas 
+        y propiciar expectativas.</p>
 
     </section>
     <section>
@@ -84,15 +98,17 @@
         Lo primero es definir la base de datos que será el insumo de trabajo. Se decide tomar el insumo de 
         datos abiertos donde se presentan el estado de los casos de covid 19 en Colombia.
         La limpieza de datos incluyó organizar las fechas, eliminar columnas que no se consideraron relevantes
-        para el modelo. 
+        para el modelo. Para el entendimiento de los datos fue importante calcular el total de casos por genero y por ciudad, 
+        esto para ayudarnos a entender mejor el comportamiento de la enfermedad.
       </p>
       <img src="figs/totalcasos_sexo.png" alt="figs/totalcasos_sexo.png" title="Total Casos por género" />
       <br>
-      <img src="figs/Medellín.png" alt="figs/Medellín.png" title="Medellin" />
-
+      <img src="figs/Casosporciudad.png" alt="figs/Casosporciudad.png" title="Total Casos por ciudad" />
+      <br>
+      
     </section>
 
-    <section>
+     <section>
         <h2>Dashboard</h2>
         <p>Para acceder al tablero, ingrese aquí <a href="https://elgutierrezbu.github.io/Tablero.html">Dashboard</a>.</p>
      </section>
@@ -103,6 +119,27 @@
              ingrese aquí <a href="https://colab.research.google.com/drive/1OTriMr1Bn6xvIvrw1Yz4lS9wz9LogEvP#scrollTo=K_i-CflCtXKL">Código</a>.
          </p>
      </section>
+     <section>
+       <h2>Conclusiones</h2>
+     </section>
+     <section>
+      <h2>Referencias</h2>
+      <p>
+        CEPAL, N. (2020). América Latina y el Caribe ante la pandemia del COVID-19: efectos económicos y sociales.</p>
+      <p>
+        DANE. (2020). PROYECCIONES Y RETROPROYECCIONES DE POBLACIÓN. Obtenido de:
+        <a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion">DANE</a></p>
+      <p>
+        Datos abiertos (2020). Casos positivos de COVID-19 en Colombia. Obtenido de : 
+        <a href="https://www.datos.gov.co/Salud-y-Protecci-n-Social/Casos-positivos-de-COVID-19-en-Colombia/gt2j-8ykr/data">Datos abiertos Colombia</a></p>
+      <p>
+        Díaz-Castrillón, F. J., & Toro-Montoya, A. I. (2020). SARS-CoV-2/COVID-19: el virus, la enfermedad y la pandemia.</p>
+        Medicina y Laboratorio, 24(3), 183-205.
+      <p>
+        Galmés Mifsud, A. (2019). Automatic forecasting y sus aplicaciones en Big Data: una comparativa entre algoritmos.</p>
+   
+    </section>
+    <br>
 
     <footer>
         Trabajo final Analítica predictiva 2020-I
